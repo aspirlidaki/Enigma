@@ -66,10 +66,24 @@ def main():
                 print(f"\n🔓 Your decrypted message is: {plaintext}")
             except ValueError:
                 print("\n⚠️ Error: The shift key must be a whole number!")
-            
+
         elif choice == '3':
-            print("\n[*] Brute-force module selected. (Coming soon...)")
-            # We will add the brute-force code here later!
+            print("\n--- Brute-Force Cracker ---")
+            message = input("Enter the encrypted message to crack: ")
+            
+            print("\n[Cracking] Trying all possible shifts...")
+            print("-" * 30)
+            
+            # The range(1, 26) function generates numbers from 1 up to 25.
+            for shift in range(1, 26):
+                # We use -shift because we are trying to reverse (decrypt) the message
+                attempt = caesar_encrypt(message, -shift)
+                
+                # The :02d formats the number to always have two digits (e.g., 01, 02)
+                print(f"Key {shift:02d}: {attempt}")
+                
+            print("-" * 30)
+            print("Look through the results above to find the readable message!")
             
         elif choice == '4':
             print("\nExiting Enigma. Goodbye!")
