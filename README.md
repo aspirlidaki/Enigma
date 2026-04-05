@@ -53,7 +53,7 @@ The goal of this project is not only to produce a working tool, but to serve as 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/Enigma.git
+   git clone https://github.com/aspirlidaki/Enigma.git
    cd Enigma
    ```
 
