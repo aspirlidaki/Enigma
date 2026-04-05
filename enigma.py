@@ -54,8 +54,18 @@ def main():
                 print("\n⚠️ Error: The shift key must be a whole number!")
             
         elif choice == '2':
-            print("\n[-] Decryption module selected. (Coming soon...)")
-            # We will add the decryption code here later!
+            print("\n--- Decryption ---")
+            message = input("Enter the message you want to decrypt: ")
+            
+            try:
+                key = int(input("Enter the shift key it was encrypted with: "))
+                
+                # The magic trick: we use a negative key (-key) to shift backward!
+                plaintext = caesar_encrypt(message, -key)
+                
+                print(f"\n🔓 Your decrypted message is: {plaintext}")
+            except ValueError:
+                print("\n⚠️ Error: The shift key must be a whole number!")
             
         elif choice == '3':
             print("\n[*] Brute-force module selected. (Coming soon...)")
